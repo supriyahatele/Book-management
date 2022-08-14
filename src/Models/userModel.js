@@ -36,9 +36,10 @@ const userSchema = new mongoose.Schema(
     },
 
     address: {
-      street: { type: String },
-      city: { type: String },
-      pincode: { type: String },
+      street: { type: String ,trim :true,},
+      city: { type: String},
+      pincode: { type: String},
+      
     }
   },
   { timestamps: true }

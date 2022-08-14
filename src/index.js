@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const route = require('./route/route.js');
+const { AppConfig } = require('aws-sdk');
 const multer = require('multer')
 const  mongoose = require('mongoose');
 const app = express();
@@ -23,7 +24,6 @@ app.use(function (e, req, res, next) {
     if (e.message == "Bad Request") return res.status(400).send({ error: e.message });
 
 })
-
 
 app.listen(process.env.PORT || 3000, function () {
     console.log('Express app running on port ' + (process.env.PORT || 3000))
